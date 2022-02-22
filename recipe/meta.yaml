@@ -1,4 +1,4 @@
-{% set version = "2.2.1" %}
+{% set version = "2.2.14" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/magicaxis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/magicaxis/magicaxis_{{ version }}.tar.gz
-  sha256: 549cc3ccd72fd4df880d78ef32a1cf923a5dbed4dc3b1574320b29399ebe48ad
+  sha256: fb2cb62ec40bff1d4dddd86476e3a29332409471ee82d8ba3aae4a6cec8e16bf
 
 build:
   merge_build_host: true  # [win]
