@@ -1,11 +1,11 @@
-About r-magicaxis
-=================
+About r-magicaxis-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-magicaxis-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=magicaxis
 
 Package license: GPL-3
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-magicaxis-feedstock/blob/main/LICENSE.txt)
 
 Summary: Functions to make useful (and pretty) plots for scientific plotting. Additional plotting features are added for base plotting, with particular emphasis on making attractive log axis plots.
 
