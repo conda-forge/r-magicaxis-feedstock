@@ -1,4 +1,4 @@
-{% set version = "2.2.14" %}
+{% set version = "2.4.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/magicaxis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/magicaxis/magicaxis_{{ version }}.tar.gz
-  sha256: fb2cb62ec40bff1d4dddd86476e3a29332409471ee82d8ba3aae4a6cec8e16bf
+  sha256: 6d4802502a6fb2feafb3d9cbd7fa48e2d2de68a7f3eca3436b96d642c6039213
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -23,10 +23,11 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-mass
-    - r-rcolorbrewer
+    - r-rann
     - r-celestial >=1.4.1
     - r-mapproj
     - r-plotrix
@@ -34,7 +35,7 @@ requirements:
   run:
     - r-base
     - r-mass
-    - r-rcolorbrewer
+    - r-rann
     - r-celestial >=1.4.1
     - r-mapproj
     - r-plotrix
@@ -47,15 +48,16 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=magicaxis
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Functions to make useful (and pretty) plots for scientific plotting. Additional plotting features are added for base plotting, with particular emphasis on making attractive log axis plots.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
-    - npavlovikj
     - conda-forge/r
+    - npavlovikj
 
 # Package: magicaxis
 # Type: Package
