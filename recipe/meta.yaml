@@ -1,4 +1,4 @@
-{% set version = "2.4.5" %}
+{% set version = "2.5.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/magicaxis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/magicaxis/magicaxis_{{ version }}.tar.gz
-  sha256: 6d4802502a6fb2feafb3d9cbd7fa48e2d2de68a7f3eca3436b96d642c6039213
+  sha256: 52866ea96b99036de4baea8e3436665427831fe31f7ccccccad2ca465c8627f7
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
